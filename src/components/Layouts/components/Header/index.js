@@ -8,6 +8,7 @@ import { wapper as PopperWrapper } from '~/components/popper';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItems from '~/components/AccountItems';
+import Buttons from '~/components/Buttons';
 
 const cx = classNames.bind(styles);
 function Header() {
@@ -50,7 +51,10 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}></div>
+                <div className={cx('actions')}>
+                    <Buttons text>Upload</Buttons>
+                    <Buttons primary>Log in</Buttons>
+                </div>
             </div>
         </header>
     );
