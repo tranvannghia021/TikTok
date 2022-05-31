@@ -20,10 +20,38 @@ import Buttons from '~/components/Buttons';
 import Menu from '~/components/popper/Menu';
 
 const MENU_ITEMS = [
-    { icon: <FontAwesomeIcon icon={faEarthAsia} />, title: 'Enghlish' },
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia} />,
+        title: 'Enghlish',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'Language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'Language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+            ],
+        },
+    },
     { icon: <FontAwesomeIcon icon={faCircleQuestion} />, title: 'Feedback and help', to: '/feedback' },
+
     { icon: <FontAwesomeIcon icon={faKeyboard} />, title: 'Keyboard shortcuts' },
 ];
+const handleMenuChange = (menuItem) => {
+    switch (menuItem.type) {
+        case 'Language':
+            //
+            break;
+        default:
+            throw new Error('underfind');
+    }
+};
 const cx = classNames.bind(styles);
 function Header() {
     const [searchResult, setsearchResult] = useState([]);
@@ -69,7 +97,7 @@ function Header() {
                     <Buttons text>Upload</Buttons>
                     <Buttons primary>Log in</Buttons>
 
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
