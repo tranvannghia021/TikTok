@@ -4,8 +4,11 @@ import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 function MenuItems({ data, onClick }) {
+    const classes = cx('menu-item', {
+        sepatate: data.sepatate,
+    });
     return (
-        <Buttons className={cx('menu-item')} leftIcon={data.icon} to={data.to} onClick={onClick}>
+        <Buttons className={classes} leftIcon={data.icon} to={data.to} onClick={onClick}>
             {data.title}
         </Buttons>
     );
