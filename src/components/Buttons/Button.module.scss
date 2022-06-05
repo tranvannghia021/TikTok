@@ -7,6 +7,7 @@
     border-radius: 4px;
     font-size: 1.6rem;
     font-weight: 700;
+    font-family: 'ProximaNova', sans-serif;
     cursor: pointer;
     background-color: var(--white);
     border: 1px solid transparent;
@@ -14,6 +15,7 @@
     + .wrapper {
         margin-left: 8px;
     }
+
     &.disabled {
         pointer-events: none;
         opacity: 0.5;
