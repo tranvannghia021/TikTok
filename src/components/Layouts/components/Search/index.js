@@ -17,7 +17,7 @@ function Search() {
 
     const inputRef = useRef();
     useEffect(() => {
-        if (!searchValue) {
+        if (!searchValue.trim()) {
             return;
         }
         setLoading(true);
